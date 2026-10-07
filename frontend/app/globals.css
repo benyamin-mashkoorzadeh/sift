@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+:root {
+  --background: #e9e5e4;
+  --surface: #f2eeee;
+  --elevated: #e1dadb;
+  --border: #cec5c6;
+  --primary: #7d263d;
+  --primary-hover: #922f49;
+  --primary-soft: #ddced2;
+  --text: #211d1e;
+  --text-secondary: #686163;
+  --text-muted: #91898b;
+  --success: #356859;
+  --success-soft: #d8e5df;
+  --warning: #80551f;
+  --warning-soft: #eee0cc;
+  --danger: #963d43;
+  --danger-soft: #ecd6d8;
+  --focus-ring: rgba(125, 38, 61, 0.28);
+  --sidebar-width: 248px;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-elevated: var(--elevated);
+  --color-border: var(--border);
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-soft: var(--primary-soft);
+  --color-foreground: var(--text);
+  --color-secondary: var(--text-secondary);
+  --color-muted: var(--text-muted);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --font-sans: var(--font-manrope), sans-serif;
+  --font-mono: var(--font-jetbrains-mono), monospace;
+}
+
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+html { background: var(--background); }
+body {
+  margin: 0;
+  color: var(--text);
+  background: var(--background);
+  font-family: var(--font-manrope), sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+button, input { font: inherit; }
+button, a { -webkit-tap-highlight-color: transparent; }
+a { color: inherit; text-decoration: none; }
+button:focus-visible, a:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+::selection { color: var(--surface); background: var(--primary); }
+
+/* The embedded widget owns its document viewport rather than the dashboard canvas. */
+html:has(.widget-frame-root),
+body:has(.widget-frame-root) {
+  min-width: 0;
+  overflow: hidden;
+  background: transparent;
+}
